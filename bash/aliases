@@ -1,6 +1,8 @@
 # changing directory to code project
 function p { cd ~/Projects/$1; }
 
+alias bash-vi?="less ~/.bash/vi-mode-cheatsheet"
+
 alias k="clear"
 
 # force tmux to start with 256 color support
