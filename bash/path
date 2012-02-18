@@ -1,0 +1,4 @@
+# We could reset the path using the /etc/paths.d (http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper)
+# but that isn't as portable as just dicking about with the path here.
+
+export PATH=/usr/local/bin:$PATH;

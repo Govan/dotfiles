@@ -1,0 +1,5 @@
+A portable set of dot files to configure bash, git, tmux, etc.
+
+Specifically, vim and ssh are *not* part of this project: they're managed separately.
+
+Run rake install for usage

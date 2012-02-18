@@ -1,0 +1,14 @@
+############################################
+# [<user>@<first-host-part] in bold 
+export PS1='[$(tput bold)\u@\h$(tput sgr0)] '
+
+############################################
+export EDITOR="vim"
+
+############################################
+# Customize History
+shopt -s histappend
+HISTFILESIZE=100000  
+HISTTIMEFORMAT='%F %T => '
+HISTCONTROL=ignoredups
+

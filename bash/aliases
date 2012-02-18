@@ -1,0 +1,10 @@
+# changing directory to code project
+function p { cd ~/Projects/$1; }
+
+alias k="clear"
+
+# force tmux to start with 256 color support
+alias tmux="tmux -2"
+
+# Use Quicklook from the Terminal
+function ql { qlmanage -p $1 > /dev/null; }

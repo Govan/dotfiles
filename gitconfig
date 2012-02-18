@@ -1,0 +1,21 @@
+[user]
+	name = Gavin Montague
+	email = gavin@leftbrained.co.uk
+[alias]
+	co = checkout
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim	
+[apply]
+
+	whitespace = nowarn
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[github]
+	user = Govan
