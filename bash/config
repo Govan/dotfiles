@@ -13,9 +13,6 @@ shopt -s histappend
 HISTFILESIZE=100000  
 HISTTIMEFORMAT='%F %T => '
 HISTCONTROL=ignoredups
-PROMPT_COMMAND="history -a; history -n"
-
-
 
 ############################################
 # Turn on magical colorization with grc
