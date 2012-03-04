@@ -2,7 +2,7 @@
 set -o vi
 ############################################
 # [<user>@<first-host-part] in bold 
-export PS1='[\u@\h] '
+export PS1='\e[1;32m[\u@\h]\e[m '
 
 ############################################
 export EDITOR="vim"
