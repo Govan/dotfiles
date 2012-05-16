@@ -15,4 +15,7 @@ HISTCONTROL=ignoredups
 
 ############################################
 # Turn on magical colorization with grc
-source "`brew --prefix grc`/etc/grc.bashrc"
+if which grc >/dev/null 2>&1 ; then
+  source "`brew --prefix grc`/etc/grc.bashrc"
+fi
+
