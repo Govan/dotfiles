@@ -5,7 +5,6 @@ alias bash-vi?="less ~/.bash/vi-mode-cheatsheet"
 
 alias k="clear"
 
-alias ls="ls --color"
 if [ -f mvim ]
 then
  alias vim="mvim"
