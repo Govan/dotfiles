@@ -43,3 +43,9 @@ alias giles="watchr `ruby ~/.watchr/init.rb`"
 
 
 setopt NO_AUTO_CD
+
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+  # if no session is started, start a new session
+  test -z ${TMUX} && (tmux attach || tmux)
+fi
