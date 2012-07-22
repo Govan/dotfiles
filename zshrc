@@ -42,7 +42,8 @@ export PATH=$PATH:$HOME/bin #
 alias giles="watchr \`ruby ~/.watchr/init.rb\`"
 alias kk="clear"
 
-
+# Autocorrect drives me mental trying to correct the subcommand cookbook to cookbooks
+alias knife=’nocorrect knife’
 
 setopt NO_AUTO_CD
 
