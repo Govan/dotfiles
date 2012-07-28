@@ -3,7 +3,7 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
-  replace_all = false
+  replace_all = !!ENV["FORCE"]
   Dir['*'].each do |file|
     next if %w[Rakefile README README.rdoc LICENSE].include? file
     
