@@ -5,6 +5,7 @@
 	co = checkout
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 [color]
 	diff = auto
 	status = auto
@@ -19,3 +20,5 @@
 	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [github]
 	user = Govan
+[mergetool]
+	keepBackup = true
