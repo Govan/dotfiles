@@ -36,8 +36,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH;
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/bin # 
+export PATH=$HOME/.rvm/bin:$PATH; 
+export PATH=$HOME/bin:$PATH;
+
+# Set up RVM support
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+
 
 alias giles="watchr \`ruby ~/.watchr/init.rb\`"
 alias kk="clear"
@@ -45,6 +50,19 @@ alias kk="clear"
 
 unsetopt correct_all
 setopt NO_AUTO_CD
+
+#############################################
+# Up-arrow search on zsh only matches against the first word
+# this will make it match against everything up to the cursor.
+# In other words: multi-word search
+# http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
+up-line-or-search-prefix () {
+  local CURSOR_before_search=$CURSOR
+  zle up-line-or-search "$LBUFFER"
+  CURSOR=$CURSOR_before_search
+}
+zle -N up-line-or-search-prefix
+##############################################
 
 stty stop undef
 stty start undef
