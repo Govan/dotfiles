@@ -45,10 +45,10 @@ set -g mouse-select-window on
 
 # Vim-like copy mode with (v)isual and (y)ank
 unbind [
-bind v copy-mode
+bind Enter copy-mode
 unbind p
 bind p paste-buffer
-#bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
 # Move between windows with [ and ]
