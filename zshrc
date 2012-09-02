@@ -50,17 +50,9 @@ unsetopt correct_all
 setopt NO_AUTO_CD
 
 #############################################
-# Up-arrow search on zsh only matches against the first word
-# this will make it match against everything up to the cursor.
-# In other words: multi-word search
-# NOPE, TURNS OUT THIS DOESN'T WORK 
-# http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
-up-line-or-search-prefix () {
-  local CURSOR_before_search=$CURSOR
-  zle up-line-or-search "$LBUFFER"
-  CURSOR=$CURSOR_before_search
-}
-zle -N up-line-or-search-prefix
+# Zsh default <ctrl-r> search only matches on the first word on the line -this is nasty.
+# Rebind <ctrl-r> to the pattern search which allows us to match multiple words
+bindkey "\C-r" history-incremental-pattern-search-backward
 ##############################################
 
 stty stop undef
