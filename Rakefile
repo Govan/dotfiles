@@ -6,7 +6,7 @@ task :install do
   replace_all = !!ENV["FORCE"]
   Dir['*'].each do |file|
     next if %w[Rakefile README README.rdoc LICENSE].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if replace_all
         replace_file(file)
