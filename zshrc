@@ -10,6 +10,7 @@ ZSH_THEME="leftbrained"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rc="./script/console --irb=pry"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
