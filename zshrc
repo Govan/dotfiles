@@ -39,6 +39,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/bin:$PATH;
 
+
+export HOSTNAME=`hostname`;
 #############################################
 # RVM for managing rubies
 export PATH=$HOME/.rvm/bin:$PATH; 
