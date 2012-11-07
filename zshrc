@@ -40,11 +40,13 @@ export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/bin:$PATH;
 
 
+export EDITOR="vim";
+
 export HOSTNAME=`hostname`;
 #############################################
-# RVM for managing rubies
-export PATH=$HOME/.rvm/bin:$PATH; 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+# RBENV for managing rubies
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 #############################################
 alias kk="clear"
 
