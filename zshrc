@@ -38,15 +38,21 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/bin:$PATH;
-
-
 export EDITOR="vim";
-
 export HOSTNAME=`hostname`;
+
 #############################################
-# RBENV for managing rubies
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# if RVM is present for managing rubies
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+  source "$HOME/.rvm/scripts/rvm";
+fi
+# if RBENV is present for managing rubies
+if [[ -s "$HOME/.rbenv/bin/rbenv" ]]  ; then
+  export PATH="$HOME/.rbenv/bin:$PATH" ;
+  eval "$(rbenv init -)" ;
+fi
+#
+# And if both rbenv and rvm are present you've got bigger problems to deal with...
 #############################################
 alias kk="clear"
 
