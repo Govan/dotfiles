@@ -32,7 +32,13 @@ task :install do
 end
 
 def touch_zshrc_local
-  system %Q{touch "$HOME/.zshrc_local"}
+  target = File.expand_path("~/.zshrc_local")
+  unless File.exists? target
+    File.open(target, 'w') do |new_file|
+      new_file << "# Put private customizations in here\n"
+      new_file << "# and/or link to one of the per-machine shared configs\n"
+    end
+  end
 end
 
 def replace_file(file)
