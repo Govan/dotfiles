@@ -63,4 +63,4 @@ bindkey "\C-r" history-incremental-pattern-search-backward
 stty stop undef
 stty start undef
 
-source ~/.local-zshrc
+source ~/.zshrc_local

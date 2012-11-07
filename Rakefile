@@ -28,6 +28,11 @@ task :install do
       link_file(file)
     end
   end
+  touch_zshrc_local
+end
+
+def touch_zshrc_local
+  system %Q{touch "$HOME/.zshrc_local"}
 end
 
 def replace_file(file)
