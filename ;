@@ -55,10 +55,7 @@ fi
 # And if both rbenv and rvm are present you've got bigger problems to deal with...
 #############################################
 alias kk="clear"
-
-pman() {
-  man -t "$*" | open -f -a Preview;
-}
+alias brad="man -t !:* | open -f -a /Applications/Preview.app"
 
 unsetopt correct_all
 setopt NO_AUTO_CD
