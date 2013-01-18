@@ -41,6 +41,10 @@ export PATH=$HOME/bin:$PATH;
 export EDITOR="vim";
 export HOSTNAME=`hostname`;
 
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
 #############################################
 # if RVM is present for managing rubies
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
