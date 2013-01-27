@@ -35,7 +35,13 @@ plugins=(git)
 export DISABLE_AUTO_UPDATE="true";
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+#############################################
+# #set the prompt
+RPROMPT="%{$fg[blue]%}%3c%{$reset_color%}";
+PROMPT="%{$fg[blue]%}%m: %{$reset_color%}";
+
+
+#############################################
 export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/bin:$PATH;
 export EDITOR="vim";
