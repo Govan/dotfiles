@@ -3,10 +3,13 @@
 source ~/.zsh/colours.zsh
 
 #############################################
-# #set the prompt
+# set the prompt
 RPROMPT="%{$BLUE%}%3c%{$RESET%}";
 PROMPT="%{$BLUE%}%m: %{$RESET%}";
 
+#############################################
+# Colorize ls
+alias ls='ls -G'
 
 #############################################
 export PATH=/usr/local/bin:$PATH;
