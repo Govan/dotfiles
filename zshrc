@@ -8,21 +8,23 @@ RPROMPT="%{$BLUE%}%3c%{$RESET%}";
 PROMPT="%{$BLUE%}%m: %{$RESET%}";
 
 #############################################
-# Colorize ls
+# Simple Aliases
 alias ls='ls -G'
-
-#############################################
-export PATH=/usr/local/bin:$PATH;
-export PATH=$HOME/bin:$PATH;
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export EDITOR="vim";
-export HOSTNAME=`hostname`;
+alias be='bundle exec'
+alias kk="clear"
 
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
+
+
+#############################################
+export PATH=/usr/local/bin:$PATH;
+export PATH=$HOME/bin:$PATH;
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export EDITOR="vim";
+export HOSTNAME=`hostname`;
 
 #############################################
 # if RVM is present for managing rubies
@@ -37,13 +39,8 @@ if [[ -s "$HOME/.rbenv/bin/rbenv" ]]  ; then
   eval "$(rbenv init -)" ;
 fi
 #
+
 #############################################
-alias kk="clear"
-
-pman() {
-  man -t "$*" | open -f -a Preview;
-}
-
 unsetopt correct_all
 setopt NO_AUTO_CD
 
@@ -62,10 +59,16 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-#############################################
 # Zsh default <ctrl-r> search only matches on the first word on the line -this is nasty.
 # Rebind <ctrl-r> to the pattern search which allows us to match multiple words
 bindkey "\C-r" history-incremental-pattern-search-backward
+
+#############################################
+# Pretty format man pages
+pman() {
+  man -t "$*" | open -f -a Preview;
+}
+
 ##############################################
 # Load in your local config
 source ~/.zshrc_local
