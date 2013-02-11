@@ -1,6 +1,7 @@
 #plugins=(git)
 
 source ~/.zsh/colours.zsh
+source ~/.zsh/keybindings.zsh
 
 
 #############################################
