@@ -1,88 +1,90 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#plugins=(git)
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="leftbrained"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias rc="./script/console --irb=pry"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-export DISABLE_AUTO_UPDATE="true";
-source $ZSH/oh-my-zsh.sh
-
-#############################################
-# #set the prompt
-RPROMPT="%{$fg[blue]%}%3c%{$reset_color%}";
-PROMPT="%{$fg[blue]%}%m: %{$reset_color%}";
+source ~/.zsh/colours.zsh
 
 
 #############################################
-export PATH=/usr/local/bin:$PATH;
-export PATH=$HOME/bin:$PATH;
-export EDITOR="vim";
-export HOSTNAME=`hostname`;
+# set the prompt
+RPROMPT="%{$BLUE%}%3c%{$RESET%}";
+PROMPT="%{$BLUE%}%m: %{$RESET%}";
+
+#############################################
+# Simple Aliases
+alias ls='ls -G'
+alias be='bundle exec'
+alias kk="clear"
 
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 
+
+#############################################
+export PATH=/usr/local/bin:$PATH;
+export PATH=$HOME/bin:$PATH;
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export EDITOR="vim";
+export HOSTNAME=`hostname`;
+
 #############################################
 # if RVM is present for managing rubies
+# or if RBENV is present for managing rubies
+# And if both rbenv and rvm are present you've got bigger problems to deal with...
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
   source "$HOME/.rvm/scripts/rvm";
 fi
-# if RBENV is present for managing rubies
+
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]  ; then
   export PATH="$HOME/.rbenv/bin:$PATH" ;
   eval "$(rbenv init -)" ;
 fi
 #
-# And if both rbenv and rvm are present you've got bigger problems to deal with...
+
 #############################################
-alias kk="clear"
-
-pman() {
-  man -t "$*" | open -f -a Preview;
-}
-
 unsetopt correct_all
 setopt NO_AUTO_CD
 
 #############################################
+# Configure tab complete
+#
+autoload -Uz compinit
+compinit
+# Make completion case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Next 4 lines were cargo-culted from oh-my-zsh
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+
+#############################################
+# Command history configuration
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
+
 # Zsh default <ctrl-r> search only matches on the first word on the line -this is nasty.
 # Rebind <ctrl-r> to the pattern search which allows us to match multiple words
 bindkey "\C-r" history-incremental-pattern-search-backward
+
+#############################################
+# Pretty format man pages
+pman() {
+  man -t "$*" | open -f -a Preview;
+}
+
 ##############################################
-
-stty stop undef
-stty start undef
-
+# Load in your local config
 source ~/.zshrc_local
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
