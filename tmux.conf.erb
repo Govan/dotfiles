@@ -68,17 +68,15 @@ bind M last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 # COLORS AND STATUS BAR
 # set the status line's colors
 set -g status-fg white 
-set -g status-bg blue
+set -g status-bg colour21
 
 # set the color of the window list
 setw -g window-status-fg white 
 setw -g window-status-bg default 
-setw -g window-status-attr dim
 
 # set colors for the active window
 setw -g window-status-current-fg white 
-setw -g window-status-current-bg black
-setw -g window-status-current-attr bright
+setw -g window-status-current-bg colour232
 
 # pane colors
 set -g pane-border-fg green
@@ -90,7 +88,6 @@ set -g pane-active-border-bg blue
 # Command / message line
 set -g message-fg white 
 set -g message-bg black 
-set -g message-attr bright
 
 # Status line left side
 set -g status-left-length 40
@@ -99,5 +96,3 @@ set -g status-utf8 on
 # Update the status bar every sixty seconds
 set -g status-interval 60 # Center the window list
 set -g status-justify centre
-
-
