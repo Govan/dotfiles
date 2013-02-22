@@ -27,6 +27,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR="vim";
 export HOSTNAME=`hostname`;
+export REPORTTIME=10 ;
 
 #############################################
 # if RVM is present for managing rubies
