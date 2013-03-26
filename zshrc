@@ -38,10 +38,10 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
 fi
 
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]  ; then
+  export PATH="$HOME/.rbenv/shims:$PATH" ;
   export PATH="$HOME/.rbenv/bin:$PATH" ;
   eval "$(rbenv init -)" ;
 fi
-#
 
 #############################################
 unsetopt correct_all
