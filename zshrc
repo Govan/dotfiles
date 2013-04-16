@@ -74,7 +74,6 @@ setopt hist_ignore_dups # ignore duplication command history list
 setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
-setopt share_history # share command history data
 
 # Zsh default <ctrl-r> search only matches on the first word on the line -this is nasty.
 # Rebind <ctrl-r> to the pattern search which allows us to match multiple words
