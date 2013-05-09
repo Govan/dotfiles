@@ -11,7 +11,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	editor = vim	
 [apply]
 
@@ -22,3 +22,5 @@
 	user = Govan
 [mergetool]
 	keepBackup = true
+[push]
+	default = simple
