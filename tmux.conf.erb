@@ -57,13 +57,6 @@ bind [ previous-window
 # r to reload our tmux.conf
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
-
-#############################################
-# Maximize the current pane to a new window with m, return that window to its previous position with M
-unbind m
-bind m new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
-unbind M
-bind M last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 #############################################
 # COLORS AND STATUS BAR
 # set the status line's colors
