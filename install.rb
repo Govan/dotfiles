@@ -19,7 +19,7 @@ def install
         when 'y'
           replace_file(file)
         when 'q'
-          return true
+          return 0
         else
           puts "skipping ~/.#{file.sub('.erb', '')}"
         end
