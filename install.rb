@@ -19,7 +19,7 @@ def install
         when 'y'
           replace_file(file)
         when 'q'
-          return
+          return true
         else
           puts "skipping ~/.#{file.sub('.erb', '')}"
         end
@@ -57,6 +57,5 @@ def link_file(file)
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
-
 
 install
