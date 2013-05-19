@@ -5,7 +5,7 @@ require 'erb'
 def install
   replace_all = !!ENV["FORCE"]
   Dir['*'].each do |file|
-    next if %w[Rakefile README README.rdoc LICENSE].include? file
+    next if %w[install.rb README README.rdoc LICENSE].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if replace_all
@@ -19,7 +19,7 @@ def install
         when 'y'
           replace_file(file)
         when 'q'
-          exit
+          return
         else
           puts "skipping ~/.#{file.sub('.erb', '')}"
         end
