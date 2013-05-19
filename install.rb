@@ -1,8 +1,8 @@
-require 'rake'
+#!/usr/bin/env ruby
+
 require 'erb'
 
-desc "install the dot files into user's home directory"
-task :install do
+def install
   replace_all = !!ENV["FORCE"]
   Dir['*'].each do |file|
     next if %w[Rakefile README README.rdoc LICENSE].include? file
@@ -57,3 +57,6 @@ def link_file(file)
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
+
+
+install
