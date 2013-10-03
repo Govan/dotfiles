@@ -1,4 +1,5 @@
 # Cargo-culted from oh-my-zsh
+# I have literally no idea what most of this does.
 
 bindkey -e
 bindkey '\ew' kill-region

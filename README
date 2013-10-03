@@ -1,5 +1,9 @@
-A portable set of dot files to configure bash, git, tmux, etc.
+# A portable set of dotfiles.
 
-Specifically, vim and ssh are *not* part of this project: they're managed separately.
+Vim and ssh are *not* part of this project: they're managed separately.
 
-Run rake install for usage
+```
+./install.rb
+```
+
+Will symlink all plaintext dot files to ~/ and compile/copy any erb files over to ~/

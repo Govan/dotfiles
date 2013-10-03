@@ -53,6 +53,10 @@ unbind [
 unbind ]
 bind ] next-window
 bind [ previous-window
+
+
+# Give us a bigger scrollback
+set -g history-limit 10000 
  
 # r to reload our tmux.conf
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
