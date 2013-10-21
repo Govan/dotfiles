@@ -56,6 +56,7 @@ alias ls='ls -G'
 alias b='bundle exec'
 alias k="clear"
 alias e="vim"
+alias cdp="cd ~/Documents/Projects"
 
 alias -g ...='../..'
 alias -g ....='../../..'
