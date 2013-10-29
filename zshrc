@@ -37,7 +37,7 @@ setopt NO_AUTO_CD
 
 #############################################
 export PATH=/usr/local/bin:$PATH;
-export PATH=$HOME/bin:$PATH;
+export PATH=$HOME/Documents/projects/home/bin:$PATH;
 export PATH="/usr/local/heroku/bin:$PATH"
 
 if [[ -d "$HOME/projects/home/bin" ]]  ; then
@@ -56,11 +56,10 @@ alias ls='ls -G'
 alias b='bundle exec'
 alias k="clear"
 alias e="vim"
-alias pd="cd ~/Documents/Projects/"
+alias proj="cd ~/Documents/Projects/"
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
+alias ..='cd ./..'
+alias ...='cd ./../..'
 #############################################
 # if rbenv is present for managing rubies
 if [[ -d "$HOME/.rbenv/shims" ]]  ; then
