@@ -9,7 +9,7 @@ PROMPT="%{$BLUE%}%m: %{$RESET%}";
 #############################################
 # Configure Autocomplete
 autoload -Uz compinit
-compinit
+compinit -i
 
 # Make completion case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -56,7 +56,9 @@ alias ls='ls -G'
 alias b='bundle exec'
 alias k="clear"
 alias e="vim"
-alias proj="cd ~/Documents/Projects/"
+
+code(){cd ~/Documents/Projects/$1;}
+compctl -W ~/Documents/Projects/ -/ code
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
