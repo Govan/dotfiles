@@ -45,11 +45,11 @@ bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
-# Move between windows with [ and ]
-unbind [
-unbind ]
-bind ] next-window
-bind [ previous-window
+# Move between windows with alt-h/l
+# To use this on with iTerm set the alt-key to behave as +Esc in the profile
+bind -n M-l next-window
+bind -n M-h previous-window
+
 
 # smart pane switching with awareness of vim splits
 # Requires https://github.com/christoomey/vim-tmux-navigator
