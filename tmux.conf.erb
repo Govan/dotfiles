@@ -47,6 +47,9 @@ bind -t vi-copy 'y' copy-selection
 
 # Move between windows with alt-h/l
 # To use this on with iTerm set the alt-key to behave as +Esc in the profile
+# I also unbind <C-l> and <C-h> which previously moved between windows
+unbind l
+unbind h 
 bind -n M-l next-window
 bind -n M-h previous-window
 
