@@ -45,22 +45,19 @@ bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
-# Move between windows with alt-h/l
+# Move between windows with Ctrl-hl
 # To use this on with iTerm set the alt-key to behave as +Esc in the profile
-# I also unbind <C-l> and <C-h> which previously moved between windows
 unbind l
-unbind h 
-bind -n M-l next-window
-bind -n M-h previous-window
-
+unbind h
+bind -n C-l next-window
+bind -n C-h previous-window
 
 # smart pane switching with awareness of vim splits
 # Requires https://github.com/christoomey/vim-tmux-navigator
-bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
-bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
-bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
-bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
-bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
+bind -n M-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys M-h) || tmux select-pane -L"
+bind -n M-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys M-j) || tmux select-pane -D"
+bind -n M-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys M-k) || tmux select-pane -U"
+bind -n M-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys M-l) || tmux select-pane -R"
 
 
 # Give us a bigger scrollback
