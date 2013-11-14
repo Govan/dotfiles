@@ -10,6 +10,11 @@ bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
 setw -g xterm-keys on
 
+# Set the delay when expecting an escape sequence to nothing.
+# If this isn't 0 then vim 'hangs' for a second when leaving insert mode
+# and if you're too quick you'll end up inserting a weird character as, say,  <esc-d>
+set -sg escape-time 0
+
 # on farbaby this causes vim-solarized to behave badly
 #set -g default-terminal "xterm-256color"
 set -g default-terminal "screen-256color"
