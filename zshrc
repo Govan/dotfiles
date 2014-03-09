@@ -60,6 +60,9 @@ alias e="vim"
 code(){cd ~/Documents/Projects/$1;}
 compctl -W ~/Documents/Projects/ -/ code
 
+dropbox(){cd ~/Dropbox/me/$1;}
+compctl -W ~/Dropbox/me/ -/ dropbox
+
 alias ..='cd ./..'
 alias ...='cd ./../..'
 #############################################
