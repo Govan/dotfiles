@@ -73,6 +73,10 @@ if [[ -d "$HOME/.rbenv/shims" ]]  ; then
   eval "$(rbenv init -)" ;
 fi
 
+#############################################
+# Set preferences for Vagrant
+export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
+
 
 ##############################################
 # Load in your local config
