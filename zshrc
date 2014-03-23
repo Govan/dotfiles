@@ -81,6 +81,3 @@ export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 ##############################################
 # Load in your local config
 source ~/.zshrc_local
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
