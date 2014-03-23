@@ -57,11 +57,8 @@ alias b='bundle exec'
 alias k="clear"
 alias e="vim"
 
-code(){cd ~/Documents/Projects/$1;}
-compctl -W ~/Documents/Projects/ -/ code
-
-dropbox(){cd ~/Dropbox/me/$1;}
-compctl -W ~/Dropbox/me/ -/ dropbox
+export dropbox=~/Dropbox/me
+export code=~/Documents/projects
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
