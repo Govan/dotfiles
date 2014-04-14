@@ -74,6 +74,11 @@ fi
 # Set preferences for Vagrant
 export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 
+#############################################
+# Disable flow control so I can remap ctl-s to save in vim
+stty start undef
+stty stop undef
+
 
 ##############################################
 # Load in your local config
