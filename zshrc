@@ -83,6 +83,11 @@ stty stop undef
 # http://www.drbunsen.org/vim-croquet/
 alias vim='mvim -v -w ~/Documents/projects/vim-croquet/vimlog "$@"'
 
+#############################################
+# Ctl P to push a new line then restore the previous
+# line afterwards. Useful for creating that directory you for got 
+# about or checking man.
+bindkey '^P' push-line-or-edit
 ##############################################
 # Load in your local config
 source ~/.zshrc_local
