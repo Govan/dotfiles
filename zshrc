@@ -78,7 +78,10 @@ export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 # Disable flow control so I can remap ctl-s to save in vim
 stty start undef
 stty stop undef
-
+#
+# Log command history in vim so I can see where I'm spending time
+# http://www.drbunsen.org/vim-croquet/
+alias vim='mvim -v -w ~/Documents/projects/vim-croquet/vimlog "$@"'
 
 ##############################################
 # Load in your local config
