@@ -88,6 +88,14 @@ alias vim='mvim -v -w ~/Documents/projects/vim-croquet/vimlog "$@"'
 # line afterwards. Useful for creating that directory you for got 
 # about or checking man.
 bindkey '^P' push-line-or-edit
+
+
 ##############################################
+# Let's play with vim mode!
+# source ~/.zsh/vim_mode.zsh
+
+##############################################
+
+
 # Load in your local config
 source ~/.zshrc_local
