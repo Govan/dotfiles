@@ -7,7 +7,7 @@ def install
     next if %w[install.rb README README.rdoc LICENSE].include? file
     link_or_replace_file file
   end
-
+  install_submodules
   touch_zshrc_local
 end
 
@@ -20,6 +20,11 @@ def link_or_replace_file(file)
   else
     system %Q{ln -shFfv "$PWD/#{file}" "$HOME/.#{file}"}
   end
+end
+
+def install_submodules
+  system "git submodule init"
+  system "git submodule update"
 end
 
 def touch_zshrc_local

@@ -92,7 +92,7 @@ bindkey '^P' push-line-or-edit
 
 ##############################################
 # Let's play with vim mode!
-# source ~/.zsh/vim_mode.zsh
+source ~/.zsh/vim_mode.zsh
 
 ##############################################
 

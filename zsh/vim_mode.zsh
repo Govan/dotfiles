@@ -8,13 +8,19 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
+# show vim status
 function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} XX_git_custom_status_XX $EPS1"
+    VIM_PROMPT="${${KEYMAP/vicmd/X}/(main|viins)/ }"
+    PROMPT="%{$BLUE%}%m [%{$RED%}${VIM_PROMPT}%{$BLUE%}]: %{$RESET%}";
     zle reset-prompt
 }
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
+
+source ~/.zsh/opp.zsh/opp.zsh
+source ~/.zsh/opp.zsh/*.zsh
