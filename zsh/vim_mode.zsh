@@ -1,5 +1,4 @@
 bindkey -v
-
 ####################################################
 # Keybindings was cargo-culted
 bindkey '^P' up-history
@@ -13,7 +12,6 @@ bindkey '^r' history-incremental-search-backward
 # Use jk to exit insert mode.
 # This does not work, and I'm buggered if I can work out why
 bindkey -M viins 'jk' vi-cmd-mode
-
 
 ####################################################
 # show vim status as an [X] on the PROMPT
