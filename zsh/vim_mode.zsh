@@ -8,18 +8,17 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-export KEYTIMEOUT=1
-
-
+# show vim status
 function zle-line-init zle-keymap-select {
-    PROMPT1="%{$BLUE%}%m%{$RESET%}${${KEYMAP/vicmd/[N]}/(main|viins)/[ ]}: "
-    PROMPT=$PROMPT1
+    VIM_PROMPT="${${KEYMAP/vicmd/X}/(main|viins)/ }"
+    PROMPT="%{$BLUE%}%m [%{$RED%}${VIM_PROMPT}%{$BLUE%}]: %{$RESET%}";
     zle reset-prompt
 }
 
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+export KEYTIMEOUT=1
 
 # Extension to enable vim-like text-objects
 # https://github.com/hchbaw/opp.zsh
