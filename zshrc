@@ -37,12 +37,8 @@ setopt NO_AUTO_CD
 
 #############################################
 export PATH=/usr/local/bin:$PATH;
-export PATH=$HOME/Documents/projects/home/bin:$PATH;
+export PATH=$HOME/Documents/code/home/bin:$PATH;
 export PATH="/usr/local/heroku/bin:$PATH"
-
-if [[ -d "$HOME/projects/home/bin" ]]  ; then
-  export PATH="$HOME/projects/home/bin:$PATH"
-fi
 
 export EDITOR="vim";
 
@@ -59,7 +55,7 @@ alias e="vim"
 alias q="exit"
 
 export dropbox=~/Dropbox/me
-export code=~/Documents/projects
+export code=~/Documents/code
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
@@ -82,7 +78,7 @@ stty stop undef
 #
 # Log command history in vim so I can see where I'm spending time
 # http://www.drbunsen.org/vim-croquet/
-alias vim='mvim -v -w ~/Documents/projects/vim-croquet/vimlog "$@"'
+alias vim='mvim -v -w ~/Documents/code/vim-croquet/vimlog "$@"'
 
 #############################################
 # Ctl P to push a new line then restore the previous
