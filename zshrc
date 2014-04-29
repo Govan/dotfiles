@@ -75,10 +75,13 @@ export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 # Disable flow control so I can remap ctl-s to save in vim
 stty start undef
 stty stop undef
-#
-# Log command history in vim so I can see where I'm spending time
-# http://www.drbunsen.org/vim-croquet/
-alias vim='mvim -v -w ~/Documents/code/vim-croquet/vimlog "$@"'
+
+# On a mac, prefer mvim in terminal mode
+type mvim >/dev/null 2>&1 && { 
+  # Log command history in vim so I can see where I'm spending time
+  # http://www.drbunsen.org/vim-croquet/
+  alias vim='mvim -v' # -w ~/Documents/code/vim-croquet/vimlog "$@"' 
+}
 
 #############################################
 # Ctl P to push a new line then restore the previous
