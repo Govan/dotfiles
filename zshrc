@@ -57,6 +57,7 @@ alias q="exit"
 
 export dropbox=~/Dropbox/me
 export code=~/Documents/code
+export home=~/Documents/code/home
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
