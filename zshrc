@@ -2,6 +2,7 @@
 
 source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
+source ~/.zsh/dash.zsh
 #############################################
 # set the prompt
 RPROMPT="%{$BLUE%}%3c%{$RESET%}";
