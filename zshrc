@@ -55,9 +55,9 @@ alias k="clear"
 alias e="vim"
 alias q="exit"
 
-export dropbox=~/Dropbox/me
-export code=~/Documents/code
-export home=~/Documents/code/home
+export d=~/Dropbox/me
+export c=~/Documents/code
+export h=~/Documents/code/home
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
