@@ -91,6 +91,9 @@ type mvim >/dev/null 2>&1 && {
 # about or checking man.
 bindkey '^P' push-line-or-edit
 
+##############################################
+# Print a box containing first argument, useful for leaving notes/dividers in my backscroll
+function box(){ t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; } 
 
 ##############################################
 # Let's play with vim mode!
