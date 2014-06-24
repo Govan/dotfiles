@@ -50,12 +50,41 @@ bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
+# Bind movement to my RHS home-row
+unbind -t vi-copy t
+unbind -t vi-copy n
+unbind -t vi-copy s
+unbind -t vi-copy j
+unbind -t vi-copy l
+unbind -t vi-copy k
+unbind -t vi-copy T
+unbind -t vi-copy N
+unbind -t vi-copy S
+unbind -t vi-copy J
+unbind -t vi-copy L
+unbind -t vi-copy K
+
+bind -t vi-copy t cursor-down
+bind -t vi-copy n cursor-up
+bind -t vi-copy s cursor-right
+
+bind -t vi-copy T scroll-down
+bind -t vi-copy N scroll-up
+bind -t vi-copy S bottom-line
+
+
+
+
+bind-key -t vi-copy k search-again
+bind-key -t vi-copy K search-reverse
+
 # Move between windows with Ctrl-hl
 # To use this on with iTerm set the alt-key to behave as +Esc in the profile
 unbind s
 unbind h
 bind -n M-s next-window
 bind -n M-h previous-window
+
 
 
 # Smart pane switching with awareness of vim splits
