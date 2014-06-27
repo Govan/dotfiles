@@ -1,5 +1,10 @@
 #plugins=(git)
 
+#############################################
+# Disable flow control so I can remap ctl-s to save in vim
+stty start undef
+stty stop undef
+
 source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
@@ -58,6 +63,7 @@ alias q="exit"
 export d=~/Dropbox/me
 export c=~/Documents/code
 export h=~/Documents/code/home
+export i=~/Dropbox/Me/inbox
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
@@ -73,10 +79,6 @@ fi
 # Set preferences for Vagrant
 export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 
-#############################################
-# Disable flow control so I can remap ctl-s to save in vim
-stty start undef
-stty stop undef
 
 # On a mac, prefer mvim in terminal mode
 type mvim >/dev/null 2>&1 && { 
