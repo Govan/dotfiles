@@ -11,7 +11,7 @@ source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
 source ~/.zsh/vim_mode.zsh
 #############################################
-# Configure Autocomplete
+# Configure AutoComplete
 autoload -Uz compinit
 compinit -i
 
@@ -59,8 +59,8 @@ alias e="vim"
 alias q="exit"
 
 export d=~/Dropbox/me
-export c=~/Documents/code
-export h=~/Documents/code/home
+export c=~/Code
+export h=~/Ccode/home
 export i=~/Dropbox/Me/inbox
 
 alias ..='cd ./..'
