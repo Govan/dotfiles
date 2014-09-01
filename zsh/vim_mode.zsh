@@ -16,9 +16,10 @@ bindkey -M viins 'jk' vi-cmd-mode
 ####################################################
 # show vim status as an [X] on the PROMPT
 function zle-line-init zle-keymap-select {
-    VIM_PROMPT="${${KEYMAP/vicmd/N}/(opp)/M}"
-    VIM_PROMPT="${VIM_PROMPT/(main|viins)/I}"
-    PROMPT="%{$BLUE%}%m [%{$RED%}${VIM_PROMPT}%{$BLUE%}]: %{$RESET%}";
+    VIM_PROMPT="${${KEYMAP/vicmd/◆}/(opp)/M}"
+    VIM_PROMPT="${VIM_PROMPT/(main|viins)/ }"
+    PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${VIM_PROMPT}%{$fg[yellow]%}] $fg[yellow]%}[%{$fg[magenta]%}%m%{$fg[yellow]%}] [%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]%{$reset_color%}
+%{$fg[yellow]%}> %{$reset_color%}";
     zle reset-prompt
 }
 

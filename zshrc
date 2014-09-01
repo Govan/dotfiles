@@ -4,14 +4,12 @@
 # Disable flow control so I can remap ctl-s to save in vim
 stty start undef
 stty stop undef
+stty -ixon -ixoff
 
 source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
-#############################################
-# set the prompt
-RPROMPT="%{$BLUE%}%3c%{$RESET%}";
-PROMPT="%{$BLUE%}%m: %{$RESET%}";
+source ~/.zsh/vim_mode.zsh
 #############################################
 # Configure Autocomplete
 autoload -Uz compinit
@@ -92,14 +90,6 @@ type mvim >/dev/null 2>&1 && {
 # line afterwards. Useful for creating that directory you for got 
 # about or checking man.
 bindkey '^P' push-line-or-edit
-
-
-##############################################
-# Let's play with vim mode!
-source ~/.zsh/vim_mode.zsh
-
-##############################################
-
 
 # Load in your local config
 source ~/.zshrc_local
