@@ -4,16 +4,14 @@
 # Disable flow control so I can remap ctl-s to save in vim
 stty start undef
 stty stop undef
+stty -ixon -ixoff
 
 source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
+source ~/.zsh/vim_mode.zsh
 #############################################
-# set the prompt
-RPROMPT="%{$BLUE%}%3c%{$RESET%}";
-PROMPT="%{$BLUE%}%m: %{$RESET%}";
-#############################################
-# Configure Autocomplete
+# Configure AutoComplete
 autoload -Uz compinit
 compinit -i
 
@@ -61,8 +59,8 @@ alias e="vim"
 alias q="exit"
 
 export d=~/Dropbox/me
-export c=~/Documents/code
-export h=~/Documents/code/home
+export c=~/Code
+export h=~/Code/home
 export i=~/Dropbox/Me/inbox
 
 alias ..='cd ./..'
@@ -92,17 +90,6 @@ type mvim >/dev/null 2>&1 && {
 # line afterwards. Useful for creating that directory you for got 
 # about or checking man.
 bindkey '^P' push-line-or-edit
-
-##############################################
-# Print a box containing first argument, useful for leaving notes/dividers in my backscroll
-function box(){ t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; } 
-
-##############################################
-# Let's play with vim mode!
-source ~/.zsh/vim_mode.zsh
-
-##############################################
-
 
 # Load in your local config
 source ~/.zshrc_local
