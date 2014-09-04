@@ -18,8 +18,21 @@ bindkey -M viins 'jk' vi-cmd-mode
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="${${KEYMAP/vicmd/◆}/(opp)/M}"
     VIM_PROMPT="${VIM_PROMPT/(main|viins)/ }"
-    PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${VIM_PROMPT}%{$fg[yellow]%}] $fg[yellow]%}[%{$fg[magenta]%}%m%{$fg[yellow]%}] [%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]%{$reset_color%}
-%{$fg[yellow]%}> %{$reset_color%}";
+
+    STYLED_VIM_PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${VIM_PROMPT}%{$fg[yellow]%}]"
+    
+    # I don't like this being here, I'd prefer to build up the prompt independently and then set the final prompt at the last stage
+    RUBY_PROMPT="";
+    if which rbenv &> /dev/null ; then
+      ruby_version=`rbenv version-name`
+      RUBY_PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${ruby_version}%{$fg[yellow]%}]";
+    fi
+    HOST_PROMPT="$fg[yellow]%}[%{$fg[magenta]%}%m%{$fg[yellow]%}]"
+    DIR_PROMPT="[%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]"
+    TYPE_PROMPT="%{$fg[yellow]%}>"
+
+    PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT $DIR_PROMPT $RUBY_PROMPT%{$reset_color%}
+$TYPE_PROMPT %{$reset_color%}";
     zle reset-prompt
 }
 
