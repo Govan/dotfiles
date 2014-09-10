@@ -109,6 +109,9 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 set -g status-fg white 
 set -g status-bg colour21
 
+# clean up the RHS status bar
+set -g status-right ''
+
 # set the color of the window list
 setw -g window-status-fg white 
 setw -g window-status-bg default 
