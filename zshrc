@@ -79,9 +79,7 @@ export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
 
 # On a mac, prefer mvim in terminal mode
 type mvim >/dev/null 2>&1 && { 
-  # Log command history in vim so I can see where I'm spending time
-  # http://www.drbunsen.org/vim-croquet/
-  alias vim='mvim -v' # -w ~/Documents/code/vim-croquet/vimlog "$@"' 
+  alias vim='mvim -v' 
 }
 
 #############################################
