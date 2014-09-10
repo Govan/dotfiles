@@ -105,31 +105,8 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 #############################################
 # COLORS AND STATUS BAR
-# set the status line's colors
-set -g status-fg white 
-set -g status-bg colour21
-
 # clean up the RHS status bar
 set -g status-right ''
-
-# set the color of the window list
-setw -g window-status-fg white 
-setw -g window-status-bg default 
-
-# set colors for the active window
-setw -g window-status-current-fg white 
-setw -g window-status-current-bg colour232
-
-# pane colors
-set -g pane-border-fg green
-set -g pane-border-bg white
-set -g pane-active-border-fg blue
-set -g pane-active-border-fg blue 
-set -g pane-active-border-bg blue
-
-# Command / message line
-set -g message-fg white 
-set -g message-bg black 
 
 # Status line left side
 set -g status-left-length 40
@@ -138,3 +115,6 @@ set -g status-utf8 on
 # Update the status bar every sixty seconds
 set -g status-interval 60 # Center the window list
 set -g status-justify centre
+
+<%= File.read("./tmux/solarized_dark.conf") %>
+
