@@ -1,5 +1,3 @@
-#plugins=(git)
-
 #############################################
 # Disable flow control so I can remap ctl-s to save in vim
 stty start undef
