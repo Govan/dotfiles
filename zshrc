@@ -73,6 +73,12 @@ if [[ -d "$HOME/.rbenv/shims" ]]  ; then
   eval "$(rbenv init -)" ;
 fi
 
+
+#############################################
+# Draw a dividing line
+hr(){ 
+  printf '%*s\n' $(tput cols) '' | tr ' ' -; 
+}
 #############################################
 # Set preferences for Vagrant
 export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
