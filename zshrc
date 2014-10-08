@@ -39,7 +39,7 @@ setopt NO_AUTO_CD
 
 #############################################
 export PATH=/usr/local/bin:$PATH;
-export PATH=$HOME/Documents/code/home/bin:$PATH;
+export PATH=$HOME/Code/home/bin:$PATH;
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR="vim";
@@ -79,7 +79,7 @@ hr(){
 }
 #############################################
 # Set preferences for Vagrant
-export VAGRANT_DEFAULT_PROVIDER="virtualbox" ;
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion" ;
 
 # On a mac, prefer mvim in terminal mode
 type mvim >/dev/null 2>&1 && { 
