@@ -34,8 +34,9 @@ setopt EXTENDED_HISTORY
 #############################################
 # Don't prompt for autocorrect on perfectly cromulant commands
 unsetopt correct_all
-# Don't try to cd into a directory if I type it as ^<name of directory>
-setopt NO_AUTO_CD
+
+# Try to cd into a directory if I type it as ^<name of directory>
+setopt AUTO_CD
 
 #############################################
 export PATH=/usr/local/bin:$PATH;
