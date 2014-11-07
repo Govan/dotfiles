@@ -87,6 +87,12 @@ type mvim >/dev/null 2>&1 && {
   alias vim='mvim -v' 
 }
 
+# vimpager is nice for formatted man pages, but annoying for pretty
+# much everything else
+type vimpager >/dev/null 2>&1 && { 
+  export MANPAGER=vimpager
+}
+
 #############################################
 # Ctl P to push a new line then restore the previous
 # line afterwards. Useful for creating that directory you for got 
