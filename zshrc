@@ -8,6 +8,7 @@ source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
 source ~/.zsh/vim_mode.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 #############################################
 # Configure AutoComplete
 autoload -Uz compinit
