@@ -2,7 +2,7 @@
 <% if `which reattach-to-user-namespace`.empty? %>
 # Looking for reattach-to-user-namespace support?
 # the erb template that generates this file will only include those
-# bindings if reattache-to-user-namespace is present in the path
+# bindings if reattach-to-user-namespace is present in the path
 <% else %>
 set-option -g default-command "reattach-to-user-namespace -l /bin/zsh"
 bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
