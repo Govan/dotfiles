@@ -88,11 +88,17 @@ type mvim >/dev/null 2>&1 && {
   alias vim='mvim -v' 
 }
 
-# vimpager is nice for formatted man pages, but annoying for pretty
-# much everything else
-type vimpager >/dev/null 2>&1 && { 
-  export MANPAGER=vimpager
+
+#############################################
+# Use Vim-Superman as manpager
+vman() {
+  vim -c "SuperMan $*"
+
+  if [ "$?" != "0" ]; then
+    echo "No manual entry for $*"
+  fi
 }
+alias man='vman'
 
 #############################################
 # Ctl P to push a new line then restore the previous
