@@ -4,7 +4,7 @@
 # the erb template that generates this file will only include those
 # bindings if reattach-to-user-namespace is present in the path
 <% else %>
-set-option -g default-command "reattach-to-user-namespace -l /bin/zsh"
+set-option -g default-command "tmux rename-window zsh; reattach-to-user-namespace -l zsh"
 bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 <% end %>
 
@@ -121,3 +121,9 @@ set -g status-justify centre
 
 <%= File.read("./tmux/solarized_dark.conf") %>
 
+# Set tab title in iTerm
+set-option -g set-titles on
+set -g focus-events on
+# but don't change tmux's own window titles
+set -w -g automatic-rename on
+set -g set-titles-string "#S:#W"
