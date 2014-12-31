@@ -32,6 +32,9 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
+# Grep backwards through history with up-arrow
+bindkey "^[OA" history-beginning-search-backward
+bindkey "^[[A" history-beginning-search-backward
 #############################################
 # Don't prompt for autocorrect on perfectly cromulant commands
 unsetopt correct_all
