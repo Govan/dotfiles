@@ -33,8 +33,14 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 # Grep backwards through history with up-arrow
-bindkey "^[OA" history-beginning-search-backward
-bindkey "^[[A" history-beginning-search-backward
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+
 #############################################
 # Don't prompt for autocorrect on perfectly cromulant commands
 unsetopt correct_all
