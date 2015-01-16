@@ -40,7 +40,12 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+# In command mode, grep with 'n' or 't'
+bindkey -M vicmd "n" up-line-or-beginning-search # Up
+bindkey -M vicmd "t" down-line-or-beginning-search # Down
 
+# Bind 's' to forward char in command mode. It's more Dvoraky.
+bindkey -M vicmd "s" forward-char
 #############################################
 # Don't prompt for autocorrect on perfectly cromulant commands
 unsetopt correct_all
