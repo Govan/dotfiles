@@ -31,7 +31,7 @@ function zle-line-init zle-keymap-select {
     DIR_PROMPT="[%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]"
     TYPE_PROMPT="%{$fg[yellow]%}>"
 
-    TIME_PROMPT="[%{$fg[blue]%}%D{%L:%M:%S}%{$fg[yellow]%}]"
+    TIME_PROMPT="%{$fg[grey]%}[%D{%L:%M:%S}]"
 
     PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT $DIR_PROMPT $RUBY_PROMPT $TIME_PROMPT %{$reset_color%}
 $TYPE_PROMPT %{$reset_color%}";
