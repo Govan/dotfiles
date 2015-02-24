@@ -95,7 +95,7 @@ hr(){
 }
 #############################################
 # Set preferences for Vagrant
-export VAGRANT_DEFAULT_PROVIDER="vmware_fusion" ;
+#export VAGRANT_DEFAULT_PROVIDER="vmware_fusion" ;
 
 # On a mac, prefer mvim in terminal mode
 type mvim >/dev/null 2>&1 && { 

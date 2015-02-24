@@ -40,10 +40,12 @@ $TYPE_PROMPT %{$reset_color%}";
     zle reset-prompt
 }
 
-TMOUT=1
-TRAPALRM() {
-  zle reset-prompt
-}
+# This doesn't work, after reset prompt it's not possible to 
+# go up through the history
+#TMOUT=1
+#TRAPALRM() {
+#  zle reset-prompt
+#}
 
 zle -N zle-line-init
 zle -N zle-keymap-select
