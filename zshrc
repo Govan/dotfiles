@@ -56,6 +56,7 @@ setopt AUTO_CD
 #############################################
 export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/code/home/bin:$PATH;
+export PATH=$PATH:$HOME/Dropbox/Me/code/home/bin;
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR="vim";
