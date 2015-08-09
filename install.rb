@@ -18,7 +18,7 @@ def link_or_replace_file(file)
       new_file.write ERB.new(File.read(file)).result(binding)
     end
   else
-    system %Q{ln -shFfv "$PWD/#{file}" "$HOME/.#{file}"}
+    system %Q{ln -sFfv "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
 
