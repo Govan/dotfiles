@@ -1,5 +1,9 @@
+# Write capitalized summary of less than 50 chars using the imperative. 
+# The summary should read # as a continutation of: 
+# "If applied, this commit will..." (e.g.)
+# "Update getting started documentation"
+# "Remove references to older api" 
 
-# Capitalized, short (50 chars or less) summary
 
 # Blank link and then detailed explanatory text, if necessary.  Write
 # your commit message in the imperative: "Fix bug" and not "Fixed bug"
