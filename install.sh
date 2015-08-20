@@ -16,10 +16,19 @@ link_dotfile() {
   local filename=$(basename "$source");
   if [ $filename == "install.sh" -o $filename == "README.md" ] 
   then
-    return
+    echo "skipping $filename"
   else
-    ln -nsFfv "$source" "$HOME/.${filename}"
+    if [ $filename == "Vagrantfile" ]
+    then
+      ln -nsFfv "$source" "$HOME/.vagrant.d/${filename}"
+    else
+      ln -nsFfv "$source" "$HOME/.${filename}"
+    fi
   fi
+}
+
+link_vagrantfile() {
+  ln -nsFfv "$source" "$HOME/.${filename}"
 }
 
 link_dotfiles() {
@@ -34,6 +43,7 @@ install_git_submodules() {
   git submodule init
   git submodule update
 }
+
 
 main() {
   install_git_submodules
