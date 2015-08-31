@@ -31,9 +31,30 @@ function zle-line-init zle-keymap-select {
     DIR_PROMPT="[%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]"
     TYPE_PROMPT="%{$fg[yellow]%}>"
 
+    setopt prompt_subst
+    autoload -Uz vcs_info
+    zstyle ':vcs_info:*' actionformats \
+          ' [%F{3}%b%F{5}|%F{5}%a%F{3}]%f'
+    zstyle ':vcs_info:*' formats       \
+          ' %F{3}[%F{6}%b%F{3}]%f'
+    zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+    zstyle ':vcs_info:*' enable git cvs svn
+
+    # or use pre_cmd, see man zshcontrib
+    vcs_info_wrapper() {
+      vcs_info
+      if [ -n "$vcs_info_msg_0_" ]; then
+        echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+      fi
+    }
+    GIT_PROMPT=$'$(vcs_info_wrapper)'
+
+
+
     TIME_PROMPT="%{$fg[grey]%}[%D{%T}]"
 
-    PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT $DIR_PROMPT $RUBY_PROMPT $TIME_PROMPT %{$reset_color%}
+    PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT $DIR_PROMPT$GIT_PROMPT $RUBY_PROMPT $STYLED_VIM_PROMPT $TIME_PROMPT %{$reset_color%}
 $TYPE_PROMPT %{$reset_color%}";
 
 
