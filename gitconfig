@@ -3,6 +3,8 @@
 	email = gavin@leftbrained.co.uk
 [alias]
 	co = checkout
+	s = status
+	c = commit
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
