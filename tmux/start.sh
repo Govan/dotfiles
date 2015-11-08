@@ -5,9 +5,14 @@ export PATH=$PATH:/usr/local/bin
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0 
 
+if tmux info &> /dev/null; then 
+  options=( "None" "New Session" $(tmux list-sessions -F "#S") )
+else
+  options=( "None" "New Session" )
+fi
+
 # present menu for user to choose which workspace to open
 PS3="Please choose your session: "
-options=( "None" "New Session" $(tmux list-sessions -F "#S") )
 echo "Available sessions"
 echo "------------------"
 echo " "
