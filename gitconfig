@@ -1,6 +1,6 @@
 [user]
 	name = Gavin Montague
-	email = gavin@leftbrained.co.uk
+	email = "(none)"
 [alias]
 	co = checkout
 	s = status
@@ -17,8 +17,6 @@
 	editor = vim	
 [apply]
 	whitespace = nowarn
-[github]
-	user = Govan
 [mergetool]
 	keepBackup = true
 [push]
