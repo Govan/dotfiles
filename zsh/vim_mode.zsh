@@ -28,7 +28,6 @@ function zle-line-init zle-keymap-select {
       RUBY_PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${ruby_version}%{$fg[yellow]%}]";
     fi
     HOST_PROMPT="$fg[yellow]%}[%{$fg[magenta]%}%m%{$fg[yellow]%}]"
-    DIR_PROMPT="[%{$fg[green]%}${PWD/#$HOME/~}%{$fg[yellow]%}]"
     TYPE_PROMPT="%{$fg[yellow]%}>"
 
     setopt prompt_subst
@@ -54,7 +53,7 @@ function zle-line-init zle-keymap-select {
 
     TIME_PROMPT="%{$fg[grey]%}[%D{%T}]"
 
-    PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT $DIR_PROMPT$GIT_PROMPT $RUBY_PROMPT $STYLED_VIM_PROMPT $TIME_PROMPT %{$reset_color%}
+    PROMPT="$STYLED_VIM_PROMPT $HOST_PROMPT$GIT_PROMPT $RUBY_PROMPT $TIME_PROMPT %{$reset_color%}
 $TYPE_PROMPT %{$reset_color%}";
 
 
