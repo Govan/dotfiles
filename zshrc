@@ -23,10 +23,11 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 
 #############################################
 # History
-HISTFILE=$HOME/.zsh_history
 
-SAVEHIST=1000
-HISTSIZE=1000
+HISTFILE="$HOME/SpiderOak\ Hive/Code/Home/zsh_history/`hostname`"
+
+SAVEHIST=50000
+HISTSIZE=50000
 
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
