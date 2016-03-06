@@ -74,10 +74,11 @@ alias k="clear"
 alias e="vim"
 alias q="exit"
 
-export d=~/Dropbox/me
 export c=~/Code
-export h=~/Code/home
-export i=~/Dropbox/Me/inbox
+export hc=~/Code/home
+export hc=~/Hive/Code
+export hh=~/Hive/Code/home
+export i=~/Hive/Inbox
 
 alias ..='cd ./..'
 alias ...='cd ./../..'
