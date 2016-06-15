@@ -8,7 +8,7 @@ source ~/.zsh/colours.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/dash.zsh
 source ~/.zsh/vim_mode.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #############################################
 # Configure AutoComplete
 autoload -Uz compinit
@@ -73,6 +73,7 @@ alias b='bundle exec'
 alias k="clear"
 alias e="vim"
 alias q="exit"
+alias top="htop"
 
 export c=~/Code
 export hc=~/Code/home
@@ -93,16 +94,16 @@ fi
 
 #############################################
 # Draw a dividing line
-hr(){ 
-  printf '%*s\n' $(tput cols) '' | tr ' ' -; 
+hr(){
+  printf '%*s\n' $(tput cols) '' | tr ' ' -;
 }
 #############################################
 # Set preferences for Vagrant
 #export VAGRANT_DEFAULT_PROVIDER="vmware_fusion" ;
 
 # On a mac, prefer mvim in terminal mode
-type mvim >/dev/null 2>&1 && { 
-  alias vim='mvim -v' 
+type mvim >/dev/null 2>&1 && {
+  alias vim='mvim -v'
 }
 
 
@@ -119,7 +120,7 @@ alias man='vman'
 
 #############################################
 # Ctl P to push a new line then restore the previous
-# line afterwards. Useful for creating that directory you for got 
+# line afterwards. Useful for creating that directory you for got
 # about or checking man.
 bindkey '^P' push-line-or-edit
 
