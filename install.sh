@@ -20,6 +20,7 @@ link_dotfile() {
   else
     if test $filename = "Vagrantfile"
     then
+      mkdir -p "~/.vagrant.d"
       ln -nsFfv "$source" "$HOME/.vagrant.d/${filename}"
     else
       ln -nsFfv "$source" "$HOME/.${filename}"
