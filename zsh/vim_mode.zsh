@@ -20,7 +20,7 @@ function zle-line-init zle-keymap-select {
     VIM_PROMPT="${VIM_PROMPT/(main|viins)/ }"
 
     STYLED_VIM_PROMPT="%{$fg[yellow]%}[%{$fg[red]%}${VIM_PROMPT}%{$fg[yellow]%}]"
-    
+
     # I don't like this being here, I'd prefer to build up the prompt independently and then set the final prompt at the last stage
     RUBY_PROMPT="";
     if which rbenv &> /dev/null ; then
@@ -60,7 +60,7 @@ $TYPE_PROMPT %{$reset_color%}";
     zle reset-prompt
 }
 
-# This doesn't work, after reset prompt it's not possible to 
+# This doesn't work, after reset prompt it's not possible to
 # go up through the history
 #TMOUT=1
 #TRAPALRM() {
@@ -72,7 +72,8 @@ zle -N zle-keymap-select
 
 #################################################
 # reduce the lag when swapping modes
-export KEYTIMEOUT=1
+export KEYTIMEOUT=40
+bindkey -M viins 'jk' vi-cmd-mode
 
 # Extension to enable vim-like text-objects
 # https://github.com/hchbaw/opp.zsh
