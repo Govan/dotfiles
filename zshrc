@@ -24,7 +24,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 #############################################
 # History
 
-HISTFILE="$HOME/Hive/Code/Home/zsh_history/`hostname`"
+HISTFILE="$HOME/Tresors/Code/home/zsh_history/`hostname`"
 
 SAVEHIST=50000
 HISTSIZE=50000
