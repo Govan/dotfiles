@@ -1,6 +1,6 @@
 [user]
 	name = Gavin Montague
-	email = "(none)"
+	email = gavin.montague@itison.com
 [alias]
 	co = checkout
 	s = status
@@ -42,3 +42,7 @@
 	templatedir = ~/.git/template
 [commit]
   template = ~/.git/message
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
