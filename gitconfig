@@ -14,7 +14,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.git/ignore_global
-	editor = vim	
+	editor = nvim	
 [apply]
 	whitespace = nowarn
 [mergetool]
