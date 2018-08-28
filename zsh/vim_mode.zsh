@@ -72,7 +72,7 @@ zle -N zle-keymap-select
 
 #################################################
 # reduce the lag when swapping modes
-export KEYTIMEOUT=40
+export KEYTIMEOUT=5
 bindkey -M viins 'jk' vi-cmd-mode
 
 # Extension to enable vim-like text-objects
