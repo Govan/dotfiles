@@ -102,22 +102,9 @@ hr(){
 #export VAGRANT_DEFAULT_PROVIDER="vmware_fusion" ;
 
 # On a mac, prefer mvim in terminal mode
-type mvim >/dev/null 2>&1 && {
-  alias vim='mvim -v'
+type nvim >/dev/null 2>&1 && {
+  alias vim='nvim'
 }
-
-
-#############################################
-# Use Vim-Superman as manpager
-vman() {
-  vim -c "SuperMan $*"
-
-  if [ "$?" != "0" ]; then
-    echo "No manual entry for $*"
-  fi
-}
-alias man='vman'
-
 #############################################
 # Ctl P to push a new line then restore the previous
 # line afterwards. Useful for creating that directory you for got
