@@ -23,11 +23,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 
 #############################################
 # History
+HISTFILE="$HOME/Tresors/Code/home/zsh_history/`hostname -s`"
 
-HISTFILE="$HOME/Tresors/Code/home/zsh_history/`hostname`"
-
-SAVEHIST=50000
-HISTSIZE=50000
+SAVEHIST=999999999
+HISTSIZE=999999999
 
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
