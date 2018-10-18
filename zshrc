@@ -73,6 +73,7 @@ alias k="clear"
 alias e="vim"
 alias q="exit"
 alias top="htop"
+alias wat="tldr"
 
 export c=~/Code
 export hc=~/Code/home
