@@ -111,5 +111,12 @@ type nvim >/dev/null 2>&1 && {
 # about or checking man.
 bindkey '^P' push-line-or-edit
 
+source /usr/local/Cellar/fzf/0.17.3/shell/completion.zsh
+source /usr/local/Cellar/fzf/0.17.3/shell/key-bindings.zsh
+
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+
 # Load in your local config
 source ~/.zshrc_local
